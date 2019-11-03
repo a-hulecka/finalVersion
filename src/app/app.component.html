@@ -1,8 +1,14 @@
-<nav>
-  <a routerLink="items">items |</a>
-  <a routerLink="workers"> workers |</a>
-  <a routerLink="register"> register |</a>
-  <a routerLink="login"> login</a>
-</nav>
 
-<router-outlet></router-outlet>
+<div class="container-fluid">
+
+  <nav class="nav nav-pills m-1">
+    <a routerLink="register" routerLinkActive="active" class="nav-item nav-link">register</a>
+    <a routerLink="login" routerLinkActive="active" class="nav-item nav-link">login</a>
+    <a routerLink="main" routerLinkActive="active" class="nav-item nav-link">main</a>
+  </nav>
+
+  access: {{auth.access}}
+  
+  <router-outlet></router-outlet>
+
+</div>

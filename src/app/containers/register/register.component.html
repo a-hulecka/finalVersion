@@ -1,77 +1,30 @@
-<p>register works!</p>
+<div class="row">
+    <div class="col-6">
+        value:
+        <pre>{{f.value | json}}</pre>
+        valid: {{f.valid}}
+    </div>
+    <div class="col-6">
+        <form #f="ngForm">
 
-value: {{f.value|json}}
+            <input ngModel="" name="firstName" class="form-control"
+                [ngClass]="{'is-valid': !f.controls['firstName']?.errors, 'is-invalid': f.controls['firstName']?.errors}"
+                placeholder="firstName" required>
 
-<br>
-<br>
+            <input ngModel="" name="lastName" class="form-control"
+                [ngClass]="{'is-valid': !f.controls['lastName']?.errors, 'is-invalid': f.controls['lastName']?.errors}"
+                placeholder="lastName" required>
 
-<div class="container">
-    <h2>User data</h2>
+            <input ngModel="" name="email" class="form-control"
+                [ngClass]="{'is-valid': !f.controls['email']?.errors, 'is-invalid': f.controls['email']?.errors}"
+                placeholder="email" required>
 
-    <form #f="ngForm">
+            <input ngModel="" name="password" class="form-control"
+                [ngClass]="{'is-valid': !f.controls['password']?.errors, 'is-invalid': f.controls['password']?.errors}"
+                placeholder="password" type="password" required minlength="5">
 
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label>First name</label>
-                <input ngModel name="First name" class="form-control is-valid" id="validationServer01"
-                    placeholder="First name" value="" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-        </div>
+            <button (click)='buttonClick(f)' type="submit" class="btn btn-primary">Submit</button>
 
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label>Last name</label>
-                <input ngModel name="Last name" class="form-control is-valid" id="validationServer01"
-                    placeholder="Last name" value="" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="validationServerUsername">Username</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                    </div>
-                    <input ngModel name="Username" class="form-control is-invalid" id="validationServerUsername"
-                        placeholder="Username" aria-describedby="inputGroupPrepend3" value="" required>
-                    <div class="invalid-feedback">
-                        Please choose a username.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label>Passport</label>
-                <input ngModel name="Passport" class="form-control is-valid" id="validationServer01"
-                    placeholder="Passport" value="" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-                <label class="form-check-label" for="invalidCheck3">
-                    Agree to terms and conditions
-                </label>
-                <div class="invalid-feedback">
-                    You must agree before submitting.
-                </div>
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-    </form>
+        </form>
+    </div>
 </div>

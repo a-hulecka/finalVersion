@@ -6,10 +6,8 @@ import { AppComponent } from './app.component';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { ContainersComponent } from './containers/containers.component';
-import { ItemsComponent } from './containers/items/items.component';
-import { WorkersComponent } from './containers/workers/workers.component';
+import { MainComponent } from './containers/Main/main.component';
 import { RegisterComponent } from './containers/register/register.component';
-import { FormComponent } from './containers/register/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './containers/login/login.component';
 
@@ -17,10 +15,8 @@ import { LoginComponent } from './containers/login/login.component';
   declarations: [
     AppComponent,
     ContainersComponent,
-    ItemsComponent,
-    WorkersComponent,
+    MainComponent,
     RegisterComponent,
-    FormComponent,
     LoginComponent,
   ],
   imports: [

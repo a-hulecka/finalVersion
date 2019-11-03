@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-6">
+        value:
+        <pre>{{f?.value | json}}</pre>
+    </div>
+
+    <div class="col-6">
+        <form #f="ngForm">
+
+            <input type="text" class="form-control" name="email" ngModel="">
+            <input type="text" class="form-control" name="password" ngModel="">
+
+            <button (click)="sendForm(f)" class="btn btn-primary">send</button>
+
+        </form>
+    </div>

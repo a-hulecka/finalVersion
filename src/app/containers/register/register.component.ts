@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  // DI - dependencies injection
+  constructor(private auth: AuthService) {
+   }
 
- 
+   buttonClick(form){
+     if(form.valid){
+       this.auth.register(form.value);
+     } else {
+       console.warn('form invalid')
+     }
+   }
+  
   ngOnInit() {
   }
 
