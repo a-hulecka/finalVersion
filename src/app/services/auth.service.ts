@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  
-  access:boolean = false;
+
+  access: boolean = false;
   key: string = 'USER';
 
   constructor() { }
@@ -14,9 +14,9 @@ export class AuthService {
     localStorage.setItem(this.key, JSON.stringify(value));
   }
 
-  checkUser(value){
+  checkUser(value) {
     const savedUser = JSON.parse(localStorage.getItem(this.key));
-    if(savedUser.email === value.email && savedUser.password === value.password) {
+    if (savedUser.email === value.email && savedUser.password === value.password) {
       alert('hurra!');
       this.access = true;
     } else {
@@ -24,8 +24,8 @@ export class AuthService {
     }
   }
 
-  getUser(){
+  getUser() {
     return JSON.parse(localStorage.getItem(this.key));
   }
-  
+
 }

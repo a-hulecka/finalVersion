@@ -1,13 +1,12 @@
 
 <div class="container-fluid">
 
-  <nav class="nav nav-pills m-1">
+  <nav class="nav nav-pills mt-2 mb-5" style="background-color: #e3f2fd;">
     <a routerLink="register" routerLinkActive="active" class="nav-item nav-link">register</a>
     <a routerLink="login" routerLinkActive="active" class="nav-item nav-link">login</a>
     <a routerLink="main" routerLinkActive="active" class="nav-item nav-link">main</a>
+    access: {{auth.access}}
   </nav>
-
-  access: {{auth.access}}
   
   <router-outlet></router-outlet>
 

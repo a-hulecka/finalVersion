@@ -7,10 +7,13 @@
     <div class="col-6">
         <form #f="ngForm">
 
-            <input type="text" class="form-control" name="email" ngModel="">
-            <input type="text" class="form-control" name="password" ngModel="">
+            <input ngModel name="email" class="form-control mb-3" placeholder="email" required
+                [ngClass]="{'is-valid': !f.controls['email']?.errors, 'is-invalid': f.controls['email']?.errors}">
 
-            <button (click)="sendForm(f)" class="btn btn-primary">send</button>
+            <input ngModel name="password" type="password" class="form-control mb-3" placeholder="password" required minlength="5"
+                [ngClass]="{'is-valid': !f.controls['password']?.errors, 'is-invalid': f.controls['password']?.errors}">
+
+            <button (click)="sendForm(f)" class="btn btn-primary">Submit</button>
 
         </form>
     </div>

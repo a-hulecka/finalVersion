@@ -8,18 +8,18 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  // DI - dependencies injection
-  constructor(private auth: AuthService) {
-   }
+  constructor(public auth: AuthService) {
+  }
 
-   buttonClick(form){
-     if(form.valid){
-       this.auth.register(form.value);
-     } else {
-       console.warn('form invalid')
-     }
-   }
-  
+  buttonClick(form) {
+    debugger;
+    if (form.valid) {
+      this.auth.register(form.value);
+    } else {
+      console.warn('form invalid')
+    }
+  }
+
   ngOnInit() {
   }
 

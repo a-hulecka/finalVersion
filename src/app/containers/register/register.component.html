@@ -2,28 +2,27 @@
     <div class="col-6">
         value:
         <pre>{{f.value | json}}</pre>
-        valid: {{f.valid}}
     </div>
     <div class="col-6">
-        <form #f="ngForm">
+        <form #f="ngForm" (submit)='buttonClick(f)'>
 
-            <input ngModel="" name="firstName" class="form-control"
+            <input ngModel name="firstName" class="form-control mb-3"
                 [ngClass]="{'is-valid': !f.controls['firstName']?.errors, 'is-invalid': f.controls['firstName']?.errors}"
                 placeholder="firstName" required>
 
-            <input ngModel="" name="lastName" class="form-control"
+            <input ngModel name="lastName" class="form-control mb-3"
                 [ngClass]="{'is-valid': !f.controls['lastName']?.errors, 'is-invalid': f.controls['lastName']?.errors}"
                 placeholder="lastName" required>
 
-            <input ngModel="" name="email" class="form-control"
+            <input ngModel name="email" class="form-control mb-3"
                 [ngClass]="{'is-valid': !f.controls['email']?.errors, 'is-invalid': f.controls['email']?.errors}"
                 placeholder="email" required>
 
-            <input ngModel="" name="password" class="form-control"
+            <input ngModel name="password" class="form-control mb-3"
                 [ngClass]="{'is-valid': !f.controls['password']?.errors, 'is-invalid': f.controls['password']?.errors}"
                 placeholder="password" type="password" required minlength="5">
 
-            <button (click)='buttonClick(f)' type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
     </div>
