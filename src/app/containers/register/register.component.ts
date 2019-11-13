@@ -8,11 +8,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public auth: AuthService) {
+  constructor(private auth: AuthService) {
   }
 
   buttonClick(form) {
-    debugger;
     if (form.valid) {
       this.auth.register(form.value);
     } else {
